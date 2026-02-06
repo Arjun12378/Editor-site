@@ -58,3 +58,44 @@ button:hover {
     margin: 20px;
     border-radius: 15px;
 }
+/* Button glowing animation */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transform: rotate(45deg) scale(0);
+    transition: transform 0.5s;
+    pointer-events: none;
+}
+
+button:hover::after {
+    transform: rotate(45deg) scale(1);
+}
+
+button {
+    box-shadow: 0 0 8px #00c6ff, 0 0 15px #0072ff, 0 0 20px #00c6ff;
+    transition: transform 0.2s, box-shadow 0.3s;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px #00c6ff, 0 0 25px #0072ff, 0 0 30px #00c6ff;
+}
+@keyframes buttonGlow {
+    0% { box-shadow: 0 0 10px #00c6ff; }
+    50% { box-shadow: 0 0 25px #00c6ff, 0 0 15px #0072ff; }
+    100% { box-shadow: 0 0 10px #00c6ff; }
+}
+
+button {
+    animation: buttonGlow 3s infinite alternate;
+}
