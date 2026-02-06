@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ultra Editor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  🚀 Ultra Editor Pro <span class="badge">v1.0</span>
+</div>
+
+<div class="app">
+
+  <div class="sidebar controls">
+    <input type="file" id="upload" accept="image/*">
+    <button onclick="addText()">Add Text</button>
+    <button onclick="enableDraw()">Draw</button>
+    <button onclick="disableDraw()">Stop Draw</button>
+    <button onclick="eraserMode()">Eraser</button>
+    <button onclick="downloadImage()">Download</button>
+  </div>
+
+  <div class="workspace">
+    <canvas id="canvas"></canvas>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/5.3.0/fabric.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
