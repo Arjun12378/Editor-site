@@ -14,23 +14,7 @@
         <button onclick="enableDraw()">Draw</button>
         <button onclick="eraserMode()">Eraser</button>
         <button onclick="downloadImage()">Download</button>
-        function aiEnhance() {
-    const bg = canvas.backgroundImage;
-    if (!bg) {
-        alert("Upload an image first");
-        return;
-    }
-
-    bg.filters = [
-        new fabric.Image.filters.Brightness({ brightness: 0.1 }),
-        new fabric.Image.filters.Contrast({ contrast: 0.25 }),
-        new fabric.Image.filters.Saturation({ saturation: 0.3 }),
-        new fabric.Image.filters.Sharpen()
-    ];
-
-    bg.applyFilters();
-    canvas.renderAll();
-}
+        <button onclick="aiEnhance()">AI Enhance</button>
     </div>
 
 
