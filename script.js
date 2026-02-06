@@ -186,3 +186,19 @@ function applyPreset(type) {
   canvas.renderAll();
 }
 
+function loadImage(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function(f) {
+        const data = f.target.result;
+        fabric.Image.fromURL(data, function(img) {
+            img.scaleToWidth(canvas.width * 0.8);
+            img.scaleToHeight(canvas.height * 0.8);
+            canvas.clear(); // remove old image if needed
+            canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
+        });
+    };
+    reader.readAsDataURL(file);
+}
